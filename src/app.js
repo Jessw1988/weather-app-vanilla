@@ -26,6 +26,11 @@ function displayWeatherCondition(response) {
   document.querySelector("#temp-display").innerHTML = Math.round(
     response.data.main.temp
   );
+  let iconElement = document.queryselector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${reponse.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(city) {
@@ -36,8 +41,8 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#search input").value;
-  search(city);
+  let city = document.querySelector("#search-input").value;
+  search(city.value);
 }
 
 const form = document.querySelector("#search");
@@ -57,5 +62,4 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-search("New York");
+let city = "Sydney";
