@@ -16,7 +16,7 @@ let hours = function () {
 
 let days = ["sun", "mon", "tues", "wed", "thurs", "fri", "sat"];
 let day = days[now.getDay()];
-var h2 = document.querySelector("h2");
+let h2 = document.querySelector("#date");
 h2.innerHTML = `${day} ${hours()}:${mins()}`;
 
 function displayWeatherCondition(response) {
@@ -26,11 +26,12 @@ function displayWeatherCondition(response) {
   document.querySelector("#temp-display").innerHTML = Math.round(
     response.data.main.temp
   );
-  let iconElement = document.queryselector("#icon");
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${reponse.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -42,7 +43,7 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
-  search(city.value);
+  search(city);
 }
 
 const form = document.querySelector("#search");
@@ -60,6 +61,32 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-display");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temp-display");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-let city = "Sydney";
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#farhenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Sydney");
