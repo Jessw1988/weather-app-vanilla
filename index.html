@@ -48,80 +48,35 @@
               </div>
             </div>
           </form>
-          <h2 id="heading">
-            <span id="date">Sunday 27 September</span>
-            <br />
-            <img src="https://openweathermap.org/img/wn/04d@2x.png" id="icon" />
-            <br />
-          </h2>
           <div class="weather-temperature">
             <span id="city-display">BRISBANE</span>
-            <br />
-            <span id="temp-display" class="celsius">27 </span>
+          </br>
+          </div>
+              <ul>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" />
+                <br />
+             <span id="temp-display" class="celsius">27 </span>
             <div class="temp">
               <a href="#" id="celsius-link" class="active">°C/</a>
               <a href="#" id="farhenheit-link"> F</a>
             </div>
-          </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> m/h</li>
+              </ul>
+            </div>
+            <br />
         </div>
       </div>
-      <div class="row forecast">
-        <div class="col-2">
-          <div class="day">
-            <i class="fas fa-sun"></i>
-            <br />
-            Monday
-            <br />
-            22°
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="day">
-            <i class="fas fa-sun"></i>
-            <br />
-            Tuesday
-            <br />
-            21°
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="day">
-            <i class="fas fa-sun"></i>
-            <br />
-            Wednesday
-            <br />
-            24°
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="day">
-            <i class="fas fa-cloud-sun"></i>
-            <br />
-            Thursday
-            <br />
-            19 °
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="day">
-            <i class="fas fa-cloud-sun"></i>
-            <br />
-            Friday
-            <br />
-            19 °
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="day">
-            <i class="fas fa-cloud-sun"></i>
-            <br />
-            Saturday
-            <br />
-            21°
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
   <script src="src/app.js" type="application/javascript"></script>
 </html>

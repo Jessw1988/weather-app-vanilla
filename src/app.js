@@ -21,11 +21,17 @@ h2.innerHTML = `${day} ${hours()}:${mins()}`;
 
 function displayWeatherCondition(response) {
   console.log(response);
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   // make changes to the HTML
   document.querySelector("#city-display").innerHTML = response.data.name;
   document.querySelector("#temp-display").innerHTML = Math.round(
     response.data.main.temp
   );
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
