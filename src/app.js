@@ -43,6 +43,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         ` <div class="col-2">
+          <div class="white-box">
           <div class="weather-forecast-date">${formatDay(forecastDay.dt)} </div>
          <img src="https://openweathermap.org/img/wn/${
            forecastDay.weather[0].icon
@@ -58,6 +59,7 @@ function displayForecast(response) {
          <span class="weather-forecast-temperature-min">
          ${Math.round(forecastDay.temp.min)}°
          </span>
+         </div>
          </div>
         </div>`;
     }
@@ -80,9 +82,9 @@ function displayWeatherCondition(response) {
   let windElement = document.querySelector("#wind");
   // make changes to the HTML
   document.querySelector("#city-display").innerHTML = response.data.name;
-  document.querySelector("#temp-display").innerHTML = Math.round(
+  document.querySelector("#temp-display").innerHTML = `${Math.round(
     response.data.main.temp
-  );
+  )}°`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);

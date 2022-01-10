@@ -24,9 +24,9 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app-wrapper">
+      <div class="weather-app-wrapper col-8 offset-2">
       <div class="row today">
-        <div class="col-6 offset-3">
+        <div class="col">
           <form id="search">
             <div class="input-group">
               <input
@@ -50,21 +50,22 @@
             </div>
           </form>
           <div class="weather-temperature">
-            <span id="city-display">BRISBANE</span>
-          </div>
-              <ul>
+            <h2 id="city-display">BRISBANE</h2>
+            <ul class="subheading">
               <li id="description"></li>
             </ul>
+          </div>
           <div class="row">
             <div class="col-6">
               <div class="clearfix weather-temperature">
-                <img src="" alt="Clear" id="icon" class="float-left" />
-                <br />
-             <span id="temp-display" class="celsius">27 </span>
-            <div class="temp">
-              <a href="#" id="celsius-link" class="active">°C/</a>
-              <a href="#" id="farhenheit-link"> F</a>
-            </div>
+                <div class="icon-temp-display">
+                  <img src="" alt="Clear" id="icon" />
+                  <span id="temp-display" class="celsius">27° </span>
+                  <div class="temp">
+                    <a href="#" id="celsius-link" class="active">C</a> /
+                    <a href="#" id="farhenheit-link"> F</a>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-6">
@@ -80,9 +81,9 @@
       </div>
      </div>
     </div>
-    <div class="updated">
-      <div> Last updated: <span id="date"></span> </div>
-      <div>Open-source Code by Jessica Wolski </div>
+    <div class="updated row justify-content-between">
+      <div class="col"> Last updated: <span id="date"></span> </div>
+      <div class="col text-right">Open-source Code by Jessica Wolski </div>
     </div>
     </div>
   </body>

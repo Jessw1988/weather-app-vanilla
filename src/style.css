@@ -6,9 +6,9 @@ body {
   font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
   background-repeat: no-repeat;
   background: #6fadf8;
-  background: -webkit-radial-gradient(bottom, #6fadf8, #c4f8fe);
-  background: -moz-radial-gradient(bottom, #6fadf8, #c4f8fe);
-  background: radial-gradient(to top, #6fadf8, #c4f8fe);
+  background: -webkit-radial-gradient(bottom, #c4f8fe, #6fadf8);
+  background: -moz-radial-gradient(bottom, #c4f8fe, #6fadf8);
+  background: radial-gradient(to top, #c4f8fe, #6fadf8);
 }
 p {
   text-align: center;
@@ -39,8 +39,6 @@ i {
 .weather-app-wrapper {
   max-width: 900px;
   margin: 30px auto;
-  border: white;
-  border-style: solid;
 }
 .forecast .day {
   font-size: 26px;
@@ -54,7 +52,6 @@ i {
 form {
   display: block;
   margin: 30px auto 30px auto;
-  padding: 20px 25px 20px 25px;
 }
 .today i {
   font-size: 70px;
@@ -76,6 +73,11 @@ form {
   text-align: center;
   color: #000;
 }
+.weather-forecast .white-box {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 0.5em 0;
+}
 .weather-forecast-date {
   font-size: 16px;
   color: darkblue;
@@ -94,17 +96,22 @@ form {
 #city-display {
   font-size: 45px;
   color: white;
-  margin-left: 30px;
 }
 .temp {
   display: inline-block;
   margin-left: 10px;
   font-size: 16px;
+  margin-top: 1.2em;
 }
 #temp-display {
-  font-size: 35px;
-  margin-left: 30px;
+  font-size: 4em;
   color: white;
+  display: flex;
+}
+.icon-temp-display {
+  display: flex;
+  flex-direction: row;
+  margin-top: -1em;
 }
 #current-location-button {
   margin: 0 10px;
@@ -113,9 +120,13 @@ form {
 }
 .updated {
   font-size: 13px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  opacity: 0.7;
-  color: darkblue;
+  padding-top: 2em;
+  color: rgb(79, 131, 192);
+}
+.text-right {
+  text-align: right;
+}
+
+ul.subheading {
+  padding-left: 0;
 }
