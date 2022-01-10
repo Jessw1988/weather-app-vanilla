@@ -14,7 +14,15 @@ let hours = function () {
   }
 };
 
-let days = ["sun", "mon", "tues", "wed", "thurs", "fri", "sat"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 let day = days[now.getDay()];
 let h2 = document.querySelector("#date");
 h2.innerHTML = `${day} ${hours()}:${mins()}`;

@@ -24,6 +24,7 @@
   </head>
   <body>
     <div class="container">
+      <div class="weather-app-wrapper">
       <div class="row today">
         <div class="col-6 offset-3">
           <form id="search">
@@ -50,10 +51,8 @@
           </form>
           <div class="weather-temperature">
             <span id="city-display">BRISBANE</span>
-          </br>
           </div>
               <ul>
-              <li>Last updated: <span id="date"></span></li>
               <li id="description"></li>
             </ul>
           <div class="row">
@@ -77,9 +76,15 @@
             <br />
         </div>
         <div class="weather-forecast" id="forecast">
+        </br>
       </div>
      </div>
-      </div>
+    </div>
+    <div class="updated">
+      <div> Last updated: <span id="date"></span> </div>
+      <div>Open-source Code by Jessica Wolski </div>
+    </div>
+    </div>
   </body>
   <script src="src/app.js" type="application/javascript"></script>
 </html>
